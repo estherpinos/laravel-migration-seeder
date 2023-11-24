@@ -20,18 +20,21 @@ class TrainsTableSeeder extends Seeder
     {
 
         for($i = 0; $i < 100; $i++){
-        $train= new Train();
-        $train->reference=$Faker->words;
-        $train->reference=$Faker->words;
-        $train->slug= Str::slug($train->reference, '-');
-        $train->Stazione_di_Partenza=$Faker->city;
-        $train->Stazione_di_arrivo=$Faker->city;
-        $train->Orario_di_partenza=$Faker->time;
-        $train->Orario_di_arrivo=$Faker->time;
-        $train->Codice_treno=$Faker->numberBetween(10000, 90000);
-        $train->In_orario=$Faker->word;
-        $train->carrozze=$Faker->numberBetween(1,10);
-        $train->cancellato=$Faker->words;
+            $train = new Train();
+            $train->reference =$Faker->sentence(3, true);
+            $train->slug = Str::slug($train->reference, '-');
+            $train->Azienda=$Faker->word;
+            $train->Stazione_di_Partenza = $Faker->city;
+            $train->Stazione_di_arrivo = $Faker->city;
+            $train->Orario_di_partenza = $Faker->time;
+            $train->Orario_di_arrivo = $Faker->time;
+            $train->Codice_treno = $Faker->numberBetween(10000, 90000);
+            $train->In_orario = $Faker->word;
+            $train->carrozze = $Faker->numberBetween(1, 10);
+            $train->cancellato = $Faker->words(3, true);
+            $train->save();
+
+
         }
 
 
