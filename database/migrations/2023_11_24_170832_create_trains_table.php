@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string('Stazione_di_arrivo', 80);
             $table->time('Orario_di_partenza', 100);
             $table->time('Orario_di_arrivo', 100);
-            $table->int('Codice_treno', 100);
-            $table->integerIncrements('carrozze');
+            $table->string('Codice_treno');
+            $table->string('carrozze');
             $table->string('In_orario', 100);
             $table->string('Cancellato', 100)->nullable();
             $table->timestamps();
